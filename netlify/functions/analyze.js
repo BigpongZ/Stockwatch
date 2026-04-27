@@ -18,7 +18,8 @@ exports.handler = async function (event) {
       }
     );
     const data = await res.json();
-    const result = data.candidates?.[0]?.content?.parts?.[0]?.text;
+console.log("Gemini response:", JSON.stringify(data));
+const result = data.candidates?.[0]?.content?.parts?.[0]?.text;
     return {
       statusCode: 200,
       headers: { "Access-Control-Allow-Origin": "*" },
